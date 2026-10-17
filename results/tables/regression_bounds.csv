@@ -1,0 +1,7 @@
+quantity,numerator,denominator,proportion,interpretation
+baseline_controlled_rows,2175,2175,1.0,released baseline_controlled==1
+released_Regressed_uncontrolled_eq_1,1458,2175,0.670344827586207,released flag; equals measured-high + unknown under unguarded Stata >= with missing
+lower_bound_all_unknown_controlled,628,2175,0.288735632183908,measured high only; every unknown follow-up assumed still controlled
+upper_bound_all_unknown_uncontrolled,1458,2175,0.670344827586207,every unknown follow-up assumed uncontrolled (coincides with the released flag)
+complete_case_measured_only,628,1345,0.46691449814126396,restricted to rows with a classifiable follow-up snapshot; assumes ignorable missingness
+unknown_followup,830,2175,0.3816091954022989,no classifiable follow-up BP in the released snapshot (missing follow-up OR undocumented control)

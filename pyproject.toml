@@ -1,0 +1,15 @@
+[project]
+name = "htn-audit"
+version = "0.1.0"
+description = "Released-data reproducibility and estimand audit of the PLOS Medicine 2026 iHEART-SA hypertension cascade release"
+requires-python = ">=3.11"
+dependencies = ["pandas>=2.2", "numpy>=1.26", "matplotlib>=3.8", "openpyxl>=3.1"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

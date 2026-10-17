@@ -1,0 +1,9 @@
+scope,hivstatus_clinical,HIVstatus2_comorbidity_checkbox,n
+all_released_rows,HIV negative,HIV+,8
+all_released_rows,HIV negative,HIV-,4879
+all_released_rows,HIV positive,HIV+,18184
+all_released_rows,HIV positive,HIV-,2057
+filereviewdone_yes,HIV negative,HIV+,8
+filereviewdone_yes,HIV negative,HIV-,4356
+filereviewdone_yes,HIV positive,HIV+,18145
+filereviewdone_yes,HIV positive,HIV-,464

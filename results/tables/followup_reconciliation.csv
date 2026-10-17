@@ -1,0 +1,13 @@
+population,followup_state,n,released_followup_controlled_1,released_followup_controlled_0,released_followup_controlled_missing
+all_released_rows,measured_high,5651,0,5651,0
+all_released_rows,measured_controlled,7383,7383,0,0
+all_released_rows,unknown_partial_bp,7,0,7,0
+all_released_rows,unknown_no_bp,12087,0,12087,0
+baseline_treated_yes,measured_high,2845,0,2845,0
+baseline_treated_yes,measured_controlled,1571,1571,0,0
+baseline_treated_yes,unknown_partial_bp,2,0,2,0
+baseline_treated_yes,unknown_no_bp,2320,0,2320,0
+baseline_controlled_eq_1,measured_high,628,0,628,0
+baseline_controlled_eq_1,measured_controlled,717,717,0,0
+baseline_controlled_eq_1,unknown_partial_bp,1,0,1,0
+baseline_controlled_eq_1,unknown_no_bp,829,0,829,0

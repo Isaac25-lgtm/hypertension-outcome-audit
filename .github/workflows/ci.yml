@@ -1,0 +1,13 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas numpy matplotlib openpyxl pytest
+      # Synthetic tests only; real-release tests skip because data/raw is never in Git and CI does not download.
+      - run: python -m pytest -q

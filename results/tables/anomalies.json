@@ -1,0 +1,15 @@
+{
+  "age_exactly_39": 912,
+  "agecat_collapsed_dot": 912,
+  "Treatedandcontrolled_eq_1": 0,
+  "Treatedandcontrolled_eq_0": 6738,
+  "hivstatuscode_nonblank": 137,
+  "hivstatuscode_U": 9,
+  "followup_sbp_missing": 12092,
+  "followup_dbp_missing": 12090,
+  "followup_controlled_missing": 0,
+  "baseline_treated_yes_baseline_bp_missing": 44,
+  "columns_identifying_participant_clinic_or_visit": [],
+  "n_rows": 25128,
+  "n_columns": 35
+}
