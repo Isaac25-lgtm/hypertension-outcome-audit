@@ -1,0 +1,17 @@
+quantity,published,released_reconstruction,filter_or_reason,difference,status
+released_rows,,25128,all rows in S2 Data,,NO_PUBLISHED_VALUE
+participants_analysed,23855,22973,filereviewdone=='Yes' (do-file eligibility filter),-882,MISMATCH
+eligible_consented_denominator,25120,25128,all released rows (consent=='Yes' for all),8,MISMATCH
+"plhiv (hivstatus, clinical)",18720,18609,filereviewdone & hivstatus=='HIV positive',-111,MISMATCH
+"plhiv (HIVstatus2, comorbidity checkbox)",18720,18153,filereviewdone & HIVstatus2=='HIV+' (regression exposure),-567,MISMATCH
+"pnlhiv (hivstatus, clinical)",5135,4364,filereviewdone & hivstatus=='HIV negative',-771,MISMATCH
+"pnlhiv (HIVstatus2, comorbidity checkbox)",5135,4820,filereviewdone & HIVstatus2=='HIV-',-315,MISMATCH
+female,16296,15688,filereviewdone & sex=='Female',-608,MISMATCH
+south_african,16097,15477,filereviewdone & nationality2=='South Africa',-620,MISMATCH
+more_than_one_visit,15553,,NOT DERIVABLE: no visit count / record id / visit dates released,,NOT_DERIVABLE
+"baseline_controlled (PLHIV+PNLHIV, Fig 3 text)",3266,2175,released baseline_controlled==1,-1091,MISMATCH
+baseline_controlled PLHIV (HIVstatus2),1125,840,baseline_controlled==1 & HIVstatus2=='HIV+',-285,MISMATCH
+baseline_controlled PNLHIV (HIVstatus2),2141,1335,baseline_controlled==1 & HIVstatus2=='HIV-',-806,MISMATCH
+controlled_to_uncontrolled (Fig 3 text),684,1458,released Regressed_uncontrolled==1,774,MISMATCH
+controlled_to_uncontrolled PLHIV (HIVstatus2),242,593,Regressed_uncontrolled==1 & HIVstatus2=='HIV+',351,MISMATCH
+controlled_to_uncontrolled PNLHIV (HIVstatus2),442,865,Regressed_uncontrolled==1 & HIVstatus2=='HIV-',423,MISMATCH

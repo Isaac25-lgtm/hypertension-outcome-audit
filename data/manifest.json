@@ -1,0 +1,39 @@
+{
+  "article": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1004957",
+  "article_published": "2026-09-11 (citation_date meta tag)",
+  "license": "CC BY 4.0 (article copyright statement: Creative Commons Attribution License)",
+  "retrieved_utc": "2026-10-17T19:06:12Z",
+  "files": [
+    {
+      "id": "s002",
+      "file": "journal.pmed.1004957.s002.xlsx",
+      "description": "S1 Appendix: REDCap medical-record abstraction dictionary",
+      "url": "https://journals.plos.org/plosmedicine/article/file?type=supplementary&id=10.1371/journal.pmed.1004957.s002",
+      "doi": "https://doi.org/10.1371/journal.pmed.1004957.s002",
+      "bytes": 15864,
+      "sha256": "04e52f2452f929228ba70edc8f40bc65a7c519485bd5f1873bb9295a4327160b",
+      "status": "RETRIEVED"
+    },
+    {
+      "id": "s005",
+      "file": "journal.pmed.1004957.s005.pdf",
+      "description": "S1 Data: Stata do-file (printed to PDF)",
+      "url": "https://journals.plos.org/plosmedicine/article/file?type=supplementary&id=10.1371/journal.pmed.1004957.s005",
+      "doi": "https://doi.org/10.1371/journal.pmed.1004957.s005",
+      "bytes": 266052,
+      "sha256": "ee96bb7390619311df4665c389b1803c6fc66b34a535c5e7cccbf9b625b9a0f7",
+      "status": "RETRIEVED"
+    },
+    {
+      "id": "s007",
+      "file": "journal.pmed.1004957.s007.csv",
+      "description": "S2 Data: minimal de-identified released dataset",
+      "url": "https://journals.plos.org/plosmedicine/article/file?type=supplementary&id=10.1371/journal.pmed.1004957.s007",
+      "doi": "https://doi.org/10.1371/journal.pmed.1004957.s007",
+      "bytes": 4069241,
+      "sha256": "e67bdf85676adfaef2916f3d602bbdaed3567206d4ff0c97c5ec42dd87511ec2",
+      "status": "RETRIEVED"
+    }
+  ],
+  "retrieval_note": "Downloaded with curl (3 files, 1 attempt each, HTTP 302->200) from journals.plos.org; article HTML fetched twice. Tables 2-4 are images on the article page and were not machine-read."
+}

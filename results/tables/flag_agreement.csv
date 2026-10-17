@@ -1,0 +1,5 @@
+released_flag,released_1,released_0,released_missing,rederived_1,rederived_0,rederived_missing,row_disagreements
+baseline_controlled,2175,4563,18390,2175,4563,18390,0
+followup_controlled,7383,17745,0,7383,17745,0,0
+Treatedandcontrolled2,1571,5167,18390,1571,5167,18390,0
+Regressed_uncontrolled,1458,717,22953,1458,717,22953,0

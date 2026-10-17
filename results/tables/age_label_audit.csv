@@ -1,0 +1,14 @@
+variable,released_label,n,age_min,age_max
+agecat,5,2352,60,93
+agecat,60+ years,5197,50,59
+agecat,Between 40-49,1557,18,29
+agecat,Between 50-59 years,9172,40,49
+agecat,between 18-39 years,6850,30,39
+agecat4,Between 40-49,8407,18,39
+agecat4,Between 50-59 years,2352,60,93
+agecat4,between 18-39 years,14369,40,59
+agecat_collapsed,.,912,39,39
+agecat_collapsed,60+ years,2352,60,93
+agecat_collapsed,Between 40-49,9172,40,49
+agecat_collapsed,Between 50-59 years,5197,50,59
+agecat_collapsed,between 18-39 years,7495,18,38
