@@ -1,0 +1,49 @@
+table4_column,released_flag,stratum,published,released,difference,status
+Remained undiagnosed,Undiagnosed,N,3950,3723,-227,MISMATCH
+Remained undiagnosed,Undiagnosed,pnlhiv,494,302,-192,MISMATCH
+Remained undiagnosed,Undiagnosed,plhiv,3456,3421,-35,MISMATCH
+Remained undiagnosed,Undiagnosed,female,2533,2379,-154,MISMATCH
+Remained undiagnosed,Undiagnosed,south_african,2615,2460,-155,MISMATCH
+Remained undiagnosed,Undiagnosed,zimbabwean,994,950,-44,MISMATCH
+Remained undiagnosed,Undiagnosed,age_missing,139,135,-4,MISMATCH
+Remained undiagnosed,Undiagnosed,plhiv_by_clinical_hivstatus,3456,3499,43,MISMATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,N,24,24,0,MATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,pnlhiv,14,14,0,MATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,plhiv,10,10,0,MATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,female,17,17,0,MATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,south_african,16,16,0,MATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,zimbabwean,6,6,0,MATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,age_missing,0,0,0,MATCH
+"Diagnosed, not yet treated",Diagnosedbutuntreated,plhiv_by_clinical_hivstatus,10,12,2,MISMATCH
+Progressed to treatment,Diagnosedandtreated,N,6868,6737,-131,MISMATCH
+Progressed to treatment,Diagnosedandtreated,pnlhiv,4050,3943,-107,MISMATCH
+Progressed to treatment,Diagnosedandtreated,plhiv,2818,2794,-24,MISMATCH
+Progressed to treatment,Diagnosedandtreated,female,4670,4577,-93,MISMATCH
+Progressed to treatment,Diagnosedandtreated,south_african,4871,4778,-93,MISMATCH
+Progressed to treatment,Diagnosedandtreated,zimbabwean,1295,1278,-17,MISMATCH
+Progressed to treatment,Diagnosedandtreated,age_missing,146,143,-3,MISMATCH
+Progressed to treatment,Diagnosedandtreated,plhiv_by_clinical_hivstatus,2818,2990,172,MISMATCH
+Achieved BP control,Treatedandcontrolled2,N,1592,1571,-21,MISMATCH
+Achieved BP control,Treatedandcontrolled2,pnlhiv,1015,983,-32,MISMATCH
+Achieved BP control,Treatedandcontrolled2,plhiv,577,588,11,MISMATCH
+Achieved BP control,Treatedandcontrolled2,female,1108,1115,7,MISMATCH
+Achieved BP control,Treatedandcontrolled2,south_african,1168,1133,-35,MISMATCH
+Achieved BP control,Treatedandcontrolled2,zimbabwean,272,278,6,MISMATCH
+Achieved BP control,Treatedandcontrolled2,age_missing,32,36,4,MISMATCH
+Achieved BP control,Treatedandcontrolled2,plhiv_by_clinical_hivstatus,577,632,55,MISMATCH
+Regressed to untreated,Regressed_untreated,N,1021,999,-22,MISMATCH
+Regressed to untreated,Regressed_untreated,pnlhiv,504,489,-15,MISMATCH
+Regressed to untreated,Regressed_untreated,plhiv,517,510,-7,MISMATCH
+Regressed to untreated,Regressed_untreated,female,695,680,-15,MISMATCH
+Regressed to untreated,Regressed_untreated,south_african,770,754,-16,MISMATCH
+Regressed to untreated,Regressed_untreated,zimbabwean,153,150,-3,MISMATCH
+Regressed to untreated,Regressed_untreated,age_missing,16,16,0,MATCH
+Regressed to untreated,Regressed_untreated,plhiv_by_clinical_hivstatus,517,543,26,MISMATCH
+Regressed to uncontrolled,Regressed_uncontrolled,N,1502,1458,-44,MISMATCH
+Regressed to uncontrolled,Regressed_uncontrolled,pnlhiv,884,865,-19,MISMATCH
+Regressed to uncontrolled,Regressed_uncontrolled,plhiv,618,593,-25,MISMATCH
+Regressed to uncontrolled,Regressed_uncontrolled,female,1056,1012,-44,MISMATCH
+Regressed to uncontrolled,Regressed_uncontrolled,south_african,1071,1040,-31,MISMATCH
+Regressed to uncontrolled,Regressed_uncontrolled,zimbabwean,275,267,-8,MISMATCH
+Regressed to uncontrolled,Regressed_uncontrolled,age_missing,32,32,0,MATCH
+Regressed to uncontrolled,Regressed_uncontrolled,plhiv_by_clinical_hivstatus,618,634,16,MISMATCH

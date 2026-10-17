@@ -61,3 +61,19 @@ def test_denominators_and_hiv_disagreement(data):
 def test_age_39_gap(data):
     df, _ = data
     assert (audit.num(df["ageinyears"]) == 39).sum() == df["agecat_collapsed"].eq(".").sum() == 912
+
+
+def test_table4_diagnosed_untreated_column_matches_exactly(data):
+    df, _ = data
+    t4 = audit.table4_reconciliation(df)
+    col = t4[(t4["released_flag"] == "Diagnosedbutuntreated") & (t4["stratum"] != "plhiv_by_clinical_hivstatus")]
+    assert (col["status"] == "MATCH").all() and len(col) == 7
+
+
+def test_table4_regressed_uncontrolled_vs_release(data):
+    df, _ = data
+    t4 = audit.table4_reconciliation(df).set_index(["released_flag", "stratum"])
+    assert t4.loc[("Regressed_uncontrolled", "N"), "published"] == 1502
+    assert t4.loc[("Regressed_uncontrolled", "N"), "released"] == 1458
+    # published 'missing age' equals released age-39 rows for this outcome
+    assert t4.loc[("Regressed_uncontrolled", "age_missing"), "released"] == 32 == t4.loc[("Regressed_uncontrolled", "age_missing"), "published"]

@@ -1,0 +1,8 @@
+table2_age,published,released_filereviewed_by_age
+18-39,7225,7573
+40-49,8587,8375
+50-59,4946,4849
+60+,2240,2176
+"18-38 (do-file bin, age<39)",,6742
+age 39 (no do-file bin),857,831
+sum of categories,22998,22973

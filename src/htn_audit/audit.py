@@ -36,6 +36,21 @@ PUBLISHED = {
     "uncontrolled_treated_pnlhiv": 1932,
 }
 
+# Table 4 (doi:10.1371/journal.pmed.1004957.t004), read visually from the PLOS image asset
+# (size=large PNG, SHA256 2cf5db81...e016). N = participants classified WITH the outcome;
+# age_n = denominator after the legend's "missing age" exclusion.
+TABLE4 = {
+    "Undiagnosed": {"label": "Remained undiagnosed", "N": 3950, "pnlhiv": 494, "plhiv": 3456, "female": 2533, "south_african": 2615, "zimbabwean": 994, "age_n": 3811},
+    "Diagnosedbutuntreated": {"label": "Diagnosed, not yet treated", "N": 24, "pnlhiv": 14, "plhiv": 10, "female": 17, "south_african": 16, "zimbabwean": 6, "age_n": 24},
+    "Diagnosedandtreated": {"label": "Progressed to treatment", "N": 6868, "pnlhiv": 4050, "plhiv": 2818, "female": 4670, "south_african": 4871, "zimbabwean": 1295, "age_n": 6722},
+    "Treatedandcontrolled2": {"label": "Achieved BP control", "N": 1592, "pnlhiv": 1015, "plhiv": 577, "female": 1108, "south_african": 1168, "zimbabwean": 272, "age_n": 1560},
+    "Regressed_untreated": {"label": "Regressed to untreated", "N": 1021, "pnlhiv": 504, "plhiv": 517, "female": 695, "south_african": 770, "zimbabwean": 153, "age_n": 1005},
+    "Regressed_uncontrolled": {"label": "Regressed to uncontrolled", "N": 1502, "pnlhiv": 884, "plhiv": 618, "female": 1056, "south_african": 1071, "zimbabwean": 275, "age_n": 1470},
+}
+
+# Table 2 (doi:10.1371/journal.pmed.1004957.t002), image asset SHA256 8bd68c07...f828.
+TABLE2_AGE = {"18-39": 7225, "40-49": 8587, "50-59": 4946, "60+": 2240}
+
 SMALL_CELL = 5  # suppress 1..4 in any public cross-tab
 
 
@@ -201,6 +216,56 @@ def denominator_reconciliation(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def table4_reconciliation(df: pd.DataFrame) -> pd.DataFrame:
+    """Table 4 outcome-group counts vs released flag==1 counts, stratum by stratum.
+
+    HIV strata use HIVstatus2 (the do-file's regression exposure); clinical hivstatus is shown alongside.
+    'age_missing' is published N - age_n vs released rows with agecat_collapsed == '.' (all aged 39).
+    """
+    rows = []
+    for col, t in TABLE4.items():
+        m = flag(df[col]) == 1
+        rel = {
+            "N": int(m.sum()),
+            "pnlhiv": int((m & df["HIVstatus2"].eq("HIV-")).sum()),
+            "plhiv": int((m & df["HIVstatus2"].eq("HIV+")).sum()),
+            "female": int((m & df["sex"].eq("Female")).sum()),
+            "south_african": int((m & df["nationality2"].eq("South Africa")).sum()),
+            "zimbabwean": int((m & df["nationality2"].eq("Zimbabwe")).sum()),
+            "age_missing": int((m & df["agecat_collapsed"].eq(".")).sum()),
+        }
+        pub = {k: t[k] for k in ("N", "pnlhiv", "plhiv", "female", "south_african", "zimbabwean")}
+        pub["age_missing"] = t["N"] - t["age_n"]
+        for k in pub:
+            rows.append({
+                "table4_column": t["label"], "released_flag": col, "stratum": k,
+                "published": pub[k], "released": rel[k], "difference": rel[k] - pub[k],
+                "status": "MATCH" if rel[k] == pub[k] else "MISMATCH",
+            })
+        rows.append({
+            "table4_column": t["label"], "released_flag": col, "stratum": "plhiv_by_clinical_hivstatus",
+            "published": t["plhiv"], "released": int((m & df["hivstatus"].eq("HIV positive")).sum()),
+            "difference": int((m & df["hivstatus"].eq("HIV positive")).sum()) - t["plhiv"],
+            "status": "MATCH" if int((m & df["hivstatus"].eq("HIV positive")).sum()) == t["plhiv"] else "MISMATCH",
+        })
+    return pd.DataFrame(rows)
+
+
+def table2_age_reconciliation(df: pd.DataFrame) -> pd.DataFrame:
+    fr = df["filereviewdone"].eq("Yes")
+    age = num(df["ageinyears"])
+    bins = {"18-39": (18, 39), "40-49": (40, 49), "50-59": (50, 59), "60+": (60, 200)}
+    rows = []
+    for k, (a, b) in bins.items():
+        rows.append({"table2_age": k, "published": TABLE2_AGE[k], "released_filereviewed_by_age": int((fr & (age >= a) & (age <= b)).sum())})
+    rows.append({"table2_age": "18-38 (do-file bin, age<39)", "published": None, "released_filereviewed_by_age": int((fr & (age <= 38)).sum())})
+    rows.append({"table2_age": "age 39 (no do-file bin)", "published": 23855 - sum(TABLE2_AGE.values()), "released_filereviewed_by_age": int((fr & (age == 39)).sum())})
+    rows.append({"table2_age": "sum of categories", "published": sum(TABLE2_AGE.values()), "released_filereviewed_by_age": int(fr.sum())})
+    out = pd.DataFrame(rows)
+    out["published"] = out["published"].astype("Int64")
+    return out
+
+
 def hiv_crosstab(df: pd.DataFrame) -> pd.DataFrame:
     fr = df["filereviewdone"].eq("Yes")
     rows = []
@@ -251,6 +316,8 @@ def run(raw: Path = RAW_CSV, out_dir: Path = Path("results/tables")) -> dict:
         "followup_reconciliation": followup_reconciliation(df, rd),
         "regression_bounds": regression_bounds(df, rd),
         "denominator_reconciliation": denominator_reconciliation(df),
+        "table4_reconciliation": table4_reconciliation(df),
+        "table2_age_reconciliation": table2_age_reconciliation(df),
         "hiv_crosstab": hiv_crosstab(df),
         "age_label_audit": age_label_audit(df),
     }

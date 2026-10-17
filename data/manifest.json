@@ -35,5 +35,34 @@
       "status": "RETRIEVED"
     }
   ],
-  "retrieval_note": "Downloaded with curl (3 files, 1 attempt each, HTTP 302->200) from journals.plos.org; article HTML fetched twice. Tables 2-4 are images on the article page and were not machine-read."
+  "retrieval_note": "Downloaded with curl (3 files, 1 attempt each, HTTP 302->200) from journals.plos.org; article HTML fetched twice. Tables 2 and 4 were later downloaded as size=large PNG assets (one attempt each) and transcribed by visual reading; Table 3 was not inspected. Images are not committed.",
+  "table_images": [
+    {
+      "id": "t002",
+      "description": "Table 2 image asset (descriptive characteristics), read visually",
+      "url": "https://journals.plos.org/plosmedicine/article/figure/image?id=10.1371%2Fjournal.pmed.1004957.t002&size=large",
+      "content_type": "image/png",
+      "pixels": "4500x2933",
+      "bytes": 1483160,
+      "sha256": "8bd68c07af7ed8b874a1aff9db7a230551c83e92c812325dd2a21ba77cedf828",
+      "retrieved_utc": "2026-10-17T19:13:34Z",
+      "status": "RETRIEVED_AND_INSPECTED"
+    },
+    {
+      "id": "t004",
+      "description": "Table 4 image asset (adjusted risk ratios, outcome-group counts), read visually",
+      "url": "https://journals.plos.org/plosmedicine/article/figure/image?id=10.1371%2Fjournal.pmed.1004957.t004&size=large",
+      "content_type": "image/png",
+      "pixels": "4500x6450",
+      "bytes": 3725356,
+      "sha256": "2cf5db817e2c0a552a5909c60943c405be7e1b18914b244a092d5f0f6ed5e016",
+      "retrieved_utc": "2026-10-17T19:13:34Z",
+      "status": "RETRIEVED_AND_INSPECTED"
+    },
+    {
+      "id": "t003",
+      "description": "Table 3 (unadjusted RRs)",
+      "status": "NOT_DOWNLOADED_UNINSPECTED"
+    }
+  ]
 }
